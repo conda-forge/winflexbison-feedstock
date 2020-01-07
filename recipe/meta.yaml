@@ -1,5 +1,5 @@
 {% set name = "winflexbison" %}
-{% set version = "2.5.20" %}
+{% set version = "2.5.21" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/lexxmark/{{ name }}/archive/v{{ version }}.tar.gz
-    sha256: cd29f888f167128c22211444c6e31b5f4823a7de0e23d8039559ee87b80349c9
+    sha256: 41e31960cc7e8ccd4b95bd770a6279d31ab7dee156e6fb4e55834f8f220637f4
     patches:
       - fix-install.patch
 
