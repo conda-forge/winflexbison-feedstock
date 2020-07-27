@@ -24,3 +24,27 @@
  
  set(PACKAGE_GENERATORS_DEFAULT ZIP)
  
+--- bison/src/files.c
++++ bison/src/files.c
+@@ -421,6 +421,7 @@
+        char* local_pkgdatadir = NULL;
+        size_t dir_len = 0;
+        size_t local_pkgdatadir_len = 0;
++       const char* const CONDA_PATH = "..\\share\\winflexbison\\";
+ 
+        program_path = dir = get_app_path();
+ 
+@@ -437,10 +438,11 @@
+        ++last_divider;
+ 
+        dir_len = last_divider - program_path;
+-       local_pkgdatadir_len = dir_len + strlen(PKGDATADIR);
++       local_pkgdatadir_len = dir_len + strlen(CONDA_PATH) + strlen(PKGDATADIR);
+        local_pkgdatadir = (char*)malloc((local_pkgdatadir_len + 1) * sizeof(char));
+        strncpy(local_pkgdatadir, program_path, dir_len);
+-       strcpy(&local_pkgdatadir[dir_len], PKGDATADIR);
++       strcpy(&local_pkgdatadir[dir_len], CONDA_PATH);
++       strcpy(&local_pkgdatadir[dir_len + strlen(CONDA_PATH)], PKGDATADIR);
+ 
+        return local_pkgdatadir;
+ }
