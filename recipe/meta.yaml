@@ -25,8 +25,11 @@ requirements:
     - cmake
 
 test:
+  files:
+    - bare-minimum.y
   commands:
     - win_bison.exe --version
+    - win_bison.exe bare-minimum.y
     - win_flex.exe --version
 
 about:
