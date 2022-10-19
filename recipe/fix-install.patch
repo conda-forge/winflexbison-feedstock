@@ -1,26 +1,26 @@
 --- CMakeLists.txt
 +++ CMakeLists.txt
-@@ -35,16 +35,16 @@
+@@ -66,18 +66,18 @@ add_subdirectory(bison)
+ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
+     # CPACK
+     if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+-      install(DIRECTORY "${CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG}/" DESTINATION "./")
++      install(DIRECTORY "${CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG}/" DESTINATION "bin")
+     else()
+-      install(DIRECTORY "${CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE}/" DESTINATION "./")
++      install(DIRECTORY "${CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE}/" DESTINATION "bin")
+     endif()
  
- # CPACK
- if(CMAKE_BUILD_TYPE STREQUAL "Debug")
--  install(DIRECTORY "bin/Debug/" DESTINATION "./")
-+  install(DIRECTORY "bin/Debug/" DESTINATION "bin")
- else()
--  install(DIRECTORY "bin/Release/" DESTINATION "./")
-+  install(DIRECTORY "bin/Release/" DESTINATION "bin")
- endif()
+-    install(DIRECTORY "custom_build_rules/" DESTINATION "./custom_build_rules/")
+-    install(DIRECTORY "bison/data/" DESTINATION "./data/")
+-    install(FILES "flex/src/FlexLexer.h" DESTINATION "./")
+-    install(FILES "changelog.md" DESTINATION "./")
+-    install(FILES "README.md" DESTINATION "./")
++    install(DIRECTORY "custom_build_rules/" DESTINATION "share/winflexbison/custom_build_rules/")
++    install(DIRECTORY "bison/data/" DESTINATION "share/winflexbison/data/")
++    install(FILES "flex/src/FlexLexer.h" DESTINATION "share/winflexbison/")
++    install(FILES "changelog.md" DESTINATION "share/winflexbison/")
++    install(FILES "README.md" DESTINATION "share/winflexbison/")
  
--install(DIRECTORY "custom_build_rules/" DESTINATION "./custom_build_rules/")
--install(DIRECTORY "bison/data/" DESTINATION "./data/")
--install(FILES "flex/src/FlexLexer.h" DESTINATION "./")
--install(FILES "changelog.md" DESTINATION "./")
--install(FILES "README.md" DESTINATION "./")
-+install(DIRECTORY "custom_build_rules/" DESTINATION "share/winflexbison/custom_build_rules/")
-+install(DIRECTORY "bison/data/" DESTINATION "share/winflexbison/data/")
-+install(FILES "flex/src/FlexLexer.h" DESTINATION "include")
-+install(FILES "changelog.md" DESTINATION "share/winflexbison/")
-+install(FILES "README.md" DESTINATION "share/winflexbison/")
- 
- set(PACKAGE_GENERATORS_DEFAULT ZIP)
+     set(PACKAGE_GENERATORS_DEFAULT ZIP)
  

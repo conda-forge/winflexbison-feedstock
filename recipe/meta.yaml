@@ -1,5 +1,5 @@
 {% set name = "winflexbison" %}
-{% set version = "2.5.22" %}
+{% set version = "2.5.25" %}
 
 package:
   name: {{ name }}
@@ -7,12 +7,12 @@ package:
 
 source:
   - url: https://github.com/lexxmark/{{ name }}/archive/v{{ version }}.tar.gz
-    sha256: 697c2c4af3308625605b75498bd63a9a294660f8e43a4c35452cf4334fa4a530
+    sha256: 8e1b71e037b524ba3f576babb0cf59182061df1f19cd86112f085a882560f60b
     patches:
       - fix-install.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [not win or vc<14]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
@@ -42,3 +42,4 @@ about:
 extra:
   recipe-maintainers:
     - seanyen
+    - js8544

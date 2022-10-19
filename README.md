@@ -163,5 +163,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@js8544](https://github.com/js8544/)
 * [@seanyen](https://github.com/seanyen/)
 
